@@ -35,7 +35,7 @@ public class ProdutoController {
 
     @GetMapping("/buscarPorNome/{nome_produto}")
     public ResponseEntity<List<Produto>> findByName(@PathVariable(value = "nome_produto")String nome){
-        List<Produto> objetoProduto = repository.findByNomeContainingIgnoreCase(nome);
+        List<Produto> objetoProduto = repository.buscarNome(nome);
 
         if(objetoProduto.isEmpty()){
             return ResponseEntity.status(204).build();
