@@ -19,8 +19,8 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
      * @since 1.0
      */
 
-    @Query("from Produto where nome like concat('%',?1'%')")
+    @Query("from Produto where nome like concat('%',?1,'%')")
     public List<Produto>buscarNome(String nome);
-    //public List<Produto> findByNomeContainingIgnoreCase (String nome);
+    //public List<Produto> findByNomeContainingIgnoreCase (Boolean tarjaPreta);
 }
 

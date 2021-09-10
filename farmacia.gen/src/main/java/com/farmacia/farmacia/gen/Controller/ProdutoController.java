@@ -34,7 +34,7 @@ public class ProdutoController {
     }
 
     @GetMapping("/buscarPorNome/{nome_produto}")
-    public ResponseEntity<List<Produto>> findByName(@PathVariable(value = "nome_produto")String nome){
+    private ResponseEntity<List<Produto>> findByName(@PathVariable(value = "nome_produto")String nome){
         List<Produto> objetoProduto = repository.buscarNome(nome);
 
         if(objetoProduto.isEmpty()){
@@ -59,5 +59,6 @@ public class ProdutoController {
     public void deleteCategoriaById(@PathVariable(value = "id_produto")Long idProduto){
         repository.deleteById(idProduto);
     }
+
 
 }
